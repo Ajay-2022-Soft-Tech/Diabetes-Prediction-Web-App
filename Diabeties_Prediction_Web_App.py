@@ -11,7 +11,7 @@ import streamlit as st # used for deployment
 
 
 # loading the saved model
-loaded_model = pickle.load(open('C:\Users\dewan\Desktop\PYTHON LIB\SIDDH\PROJECTS\DIEBETIES PREDICTION\trained_model.sav', 'rb'))
+loaded_model = pickle.load(open('C:/Users/dewan/Desktop/PYTHON LIB/SIDDH/PROJECTS/DIEBETIES PREDICTION/trained_model.sav', 'rb'))
 
 
 #creating a function for prediction
