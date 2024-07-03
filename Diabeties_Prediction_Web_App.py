@@ -5,6 +5,7 @@ Created on Wed Jul  3 11:14:23 2024
 @author: dewan
 """
 
+import os 
 import numpy as np  # used for working with numpy arrays
 import pickle  # used for loading datasets
 import streamlit as st  # used for deployment
