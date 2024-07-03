@@ -1,5 +1,4 @@
-# Diabetes-Prediction-Web-App
-
+Diabetes Prediction App
 This web application predicts the likelihood of diabetes based on input features using a machine learning model. The model has been trained using data on various health metrics.
 
 Features
@@ -44,14 +43,12 @@ Enter values for the required health metrics (e.g., glucose level, blood pressur
 Click on the "Predict" button.
 The app will display the predicted probability of diabetes.
 File Structure
-Diabeties_Prediction_Web_App.py: Main application file containing Streamlit interface code.
-Deploying_Machine_Learning_model_using_Streamlit.ipynb: Code for loading the trained machine learning model.
+app.py: Main application file containing Streamlit interface code.
+model.py: Code for loading the trained machine learning model.
 requirements.txt: List of Python dependencies.
 trained_model.sav: Trained machine learning model saved using pickle.
-
-
 Contributing
 Contributions are welcome! If you want to contribute to this project, please fork the repository and create a pull request.
 
-
-Feel free to customize this template according to your specific project details, such as adding more sections or adjusting the content to fit your app's unique features and setup instructions.
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
