@@ -55,6 +55,34 @@ def main():
     loaded_model = load_model(model_path)
 
     if loaded_model:
+        # Set background color and fonts using custom CSS
+        st.markdown(
+            """
+            <style>
+            body {
+                background-image: url('https://example.com/background.jpg');
+                background-size: cover;
+                font-family: Arial, sans-serif;
+                color: white;
+            }
+            .stTextInput {
+                color: black !important;
+            }
+            .stButton button {
+                background-color: #4CAF50; /* Green background */
+                color: white; /* White text */
+                border: 2px solid #4CAF50; /* Green border */
+                padding: 10px 24px; /* Some padding */
+                cursor: pointer; /* Pointer/hand icon */
+                border-radius: 5px;
+                font-size: 16px;
+            }
+            .stButton button:hover {
+                background-color: #45a049;
+            }
+            </style>
+            """, unsafe_allow_html=True)
+
         # Input fields for user
         st.header('Enter Patient Details')
 
