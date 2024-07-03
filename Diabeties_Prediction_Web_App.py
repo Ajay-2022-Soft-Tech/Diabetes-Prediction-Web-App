@@ -1,33 +1,23 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jul  3 11:14:23 2024
-
-@author: dewan
-"""
-
 import os 
 import numpy as np
 import pickle
 import streamlit as st
 
-# Debug: print current working directory and files in it
-st.write("Current working directory:", os.getcwd())
-st.write("Files in current directory:", os.listdir())
-
-# Use relative path to load the model
-model_path = '/mount/src/diabetes-prediction-web-app/trained_model.sav'
-
-try:
-    with open(model_path, 'rb') as model_file:
-        loaded_model = pickle.load(model_file)
-    st.write("Model loaded successfully!")
-except FileNotFoundError:
-    st.error(f"Model file not found: {model_path}")
-except Exception as e:
-    st.error(f"An error occurred while loading the model: {e}")
+# Function for loading the model
+@st.cache
+def load_model(model_path):
+    try:
+        with open(model_path, 'rb') as model_file:
+            loaded_model = pickle.load(model_file)
+        return loaded_model
+    except FileNotFoundError:
+        st.error(f"Model file not found: {model_path}")
+    except Exception as e:
+        st.error(f"An error occurred while loading the model: {e}")
+    return None
 
 # Function for prediction
-def diabetes_prediction(input_data):
+def diabetes_prediction(loaded_model, input_data):
     try:
         # Convert input data to numpy array
         input_data_as_numpy_array = np.asarray(input_data, dtype=np.float64)
@@ -49,26 +39,40 @@ def main():
     # Title of the app
     st.title('Diabetes Prediction Web App')
 
+    # Sidebar with instructions
+    st.sidebar.markdown("""
+        ### Instructions
+        - Enter the required details in the fields provided.
+        - Click the "Diabetes Test Result" button to see the prediction.
+    """)
+
     # Input fields for user
-    Pregnancies = st.text_input('Number of Pregnancies')
-    Glucose = st.text_input('Glucose level')
-    BloodPressure = st.text_input('Blood Pressure value')
-    SkinThickness = st.text_input('Skin Thickness value')
-    Insulin = st.text_input('Insulin Level')
-    BMI = st.text_input('BMI value')
-    DiabetesPedigreeFunction = st.text_input('Diabetes Pedigree Function value')
-    Age = st.text_input('Age of the Person')
+    st.sidebar.header('Enter Patient Details')
+    Pregnancies = st.sidebar.number_input('Number of Pregnancies', min_value=0, step=1)
+    Glucose = st.sidebar.number_input('Glucose level', min_value=0.0, step=1.0)
+    BloodPressure = st.sidebar.number_input('Blood Pressure value', min_value=0.0, step=1.0)
+    SkinThickness = st.sidebar.number_input('Skin Thickness value', min_value=0.0, step=1.0)
+    Insulin = st.sidebar.number_input('Insulin Level', min_value=0.0, step=1.0)
+    BMI = st.sidebar.number_input('BMI value', min_value=0.0, step=0.1)
+    DiabetesPedigreeFunction = st.sidebar.number_input('Diabetes Pedigree Function value', min_value=0.0, step=0.1)
+    Age = st.sidebar.number_input('Age of the Person', min_value=0, step=1)
+
+    # Load the model
+    model_path = '/mount/src/diabetes-prediction-web-app/trained_model.sav'
+    loaded_model = load_model(model_path)
 
     # Prediction button
-    if st.button('Diabetes Test Result'):
-        input_data = [
-            Pregnancies, Glucose, BloodPressure, SkinThickness,
-            Insulin, BMI, DiabetesPedigreeFunction, Age
-        ]
-        diagnosis = diabetes_prediction(input_data)
-        st.success(diagnosis)
+    if loaded_model:
+        if st.sidebar.button('Diabetes Test Result'):
+            input_data = [
+                Pregnancies, Glucose, BloodPressure, SkinThickness,
+                Insulin, BMI, DiabetesPedigreeFunction, Age
+            ]
+            diagnosis = diabetes_prediction(loaded_model, input_data)
+            st.sidebar.success(diagnosis)
 
 if __name__ == '__main__':
     main()
+
 
 
