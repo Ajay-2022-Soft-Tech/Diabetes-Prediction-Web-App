@@ -83,7 +83,7 @@ This web application predicts the likelihood of diabetes based on input features
 ---
  **Streamlit Link**
 
-    - https://diabetes-prediction-web-app-83v3wfyo7akjcyhzvjy3kk.streamlit.app/
+    https://diabetes-prediction-web-app-83v3wfyo7akjcyhzvjy3kk.streamlit.app/
 
 ---
 ## Contributing
