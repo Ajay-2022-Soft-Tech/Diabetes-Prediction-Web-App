@@ -81,7 +81,11 @@ This web application predicts the likelihood of diabetes based on input features
 - `trained_model.sav`: Placeholder for the trained machine learning model file.
 
 ---
+ **Streamlit Link**
 
+    - https://diabetes-prediction-web-app-83v3wfyo7akjcyhzvjy3kk.streamlit.app/
+
+---
 ## Contributing
 
 Contributions are welcome! If you want to contribute to this project, please fork the repository and create a pull request.
