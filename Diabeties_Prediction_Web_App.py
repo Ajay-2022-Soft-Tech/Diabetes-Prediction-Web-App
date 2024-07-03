@@ -39,40 +39,41 @@ def main():
     # Title of the app
     st.title('Diabetes Prediction Web App')
 
-    # Sidebar with instructions
-    st.sidebar.markdown("""
-        ### Instructions
-        - Enter the required details in the fields provided.
-        - Click the "Diabetes Test Result" button to see the prediction.
-    """)
-
-    # Input fields for user
-    st.sidebar.header('Enter Patient Details')
-    Pregnancies = st.sidebar.number_input('Number of Pregnancies', min_value=0, step=1)
-    Glucose = st.sidebar.number_input('Glucose level', min_value=0.0, step=1.0)
-    BloodPressure = st.sidebar.number_input('Blood Pressure value', min_value=0.0, step=1.0)
-    SkinThickness = st.sidebar.number_input('Skin Thickness value', min_value=0.0, step=1.0)
-    Insulin = st.sidebar.number_input('Insulin Level', min_value=0.0, step=1.0)
-    BMI = st.sidebar.number_input('BMI value', min_value=0.0, step=0.1)
-    DiabetesPedigreeFunction = st.sidebar.number_input('Diabetes Pedigree Function value', min_value=0.0, step=0.1)
-    Age = st.sidebar.number_input('Age of the Person', min_value=0, step=1)
-
     # Load the model
     model_path = '/mount/src/diabetes-prediction-web-app/trained_model.sav'
     loaded_model = load_model(model_path)
 
-    # Prediction button
     if loaded_model:
-        if st.sidebar.button('Diabetes Test Result'):
+        # Center-align main content
+        st.markdown("""
+            <style>
+            .reportview-container .main .block-container {
+                max-width: 650px;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            </style>
+            """, unsafe_allow_html=True)
+
+        # Input fields for user
+        st.header('Enter Patient Details')
+        Pregnancies = st.number_input('Number of Pregnancies', min_value=0, step=1)
+        Glucose = st.number_input('Glucose level', min_value=0.0, step=1.0)
+        BloodPressure = st.number_input('Blood Pressure value', min_value=0.0, step=1.0)
+        SkinThickness = st.number_input('Skin Thickness value', min_value=0.0, step=1.0)
+        Insulin = st.number_input('Insulin Level', min_value=0.0, step=1.0)
+        BMI = st.number_input('BMI value', min_value=0.0, step=0.1)
+        DiabetesPedigreeFunction = st.number_input('Diabetes Pedigree Function value', min_value=0.0, step=0.1)
+        Age = st.number_input('Age of the Person', min_value=0, step=1)
+
+        # Prediction button
+        if st.button('Diabetes Test Result'):
             input_data = [
                 Pregnancies, Glucose, BloodPressure, SkinThickness,
                 Insulin, BMI, DiabetesPedigreeFunction, Age
             ]
             diagnosis = diabetes_prediction(loaded_model, input_data)
-            st.sidebar.success(diagnosis)
+            st.success(diagnosis)
 
 if __name__ == '__main__':
     main()
-
-
-
