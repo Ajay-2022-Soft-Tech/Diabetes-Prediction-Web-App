@@ -1,10 +1,8 @@
-markdown
-Copy code
-# Diabetes Prediction App
-
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+# Diabetes Prediction Web App
 
 This web application predicts the likelihood of diabetes based on input features using a machine learning model. The model has been trained using data on various health metrics.
+
+---
 
 ## Features
 
@@ -12,40 +10,79 @@ This web application predicts the likelihood of diabetes based on input features
 - Simple and intuitive interface built with Streamlit.
 - Integration with a trained machine learning model.
 
-## Demo
-
-Include a screenshot or GIF of your app here to give users a preview of how it looks.
+---
 
 ## Installation
 
 1. **Clone the repository:**
 
-   ```bash
-   git clone https://github.com/yourusername/diabetes-prediction-app.git
-   cd diabetes-prediction-app
-Install dependencies:
+    ```bash
+    git clone https://github.com/yourusername/diabetes-prediction-app.git
+    cd diabetes-prediction-app
+    ```
 
-bash
-Copy code
-pip install -r requirements.txt
-Usage
-Start the Streamlit app:
+2. **Install dependencies:**
 
-bash
-Copy code
-streamlit run app.py
-Open your web browser and go to http://localhost:8501 to view the app.
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Enter values for the required health metrics (e.g., glucose level, blood pressure).
+    Ensure all dependencies from `requirements.txt` are installed.
 
-Click on the "Predict" button.
+---
 
-The app will display the predicted probability of diabetes.
+## Setup
 
-File Structure
-app.py: Main application file containing Streamlit interface code.
-model.py: Code for loading the trained machine learning model.
-requirements.txt: List of Python dependencies.
-trained_model.sav: Trained machine learning model saved using pickle.
-Contributing
+1. **Download the trained model:**
+
+    Place your trained machine learning model (`trained_model.sav`) in the root directory of the project.
+
+---
+
+## Running the App
+
+1. **Start the Streamlit app:**
+
+    ```bash
+    streamlit run app.py
+    ```
+
+    This command launches a local web server and opens the app in your default web browser.
+
+2. **Input Patient Details:**
+
+    - Enter values for the following health metrics:
+        - Number of Pregnancies
+        - Glucose level
+        - Blood Pressure value
+        - Skin Thickness value
+        - Insulin Level
+        - BMI value
+        - Diabetes Pedigree Function value
+        - Age of the Person
+
+3. **Predict Diabetes:**
+
+    - Click on the "Diabetes Test Result" button to see the prediction.
+
+---
+
+## File Structure
+
+- `app.py`: Main application file containing Streamlit interface code.
+- `model.py`: Code for loading the trained machine learning model.
+- `requirements.txt`: List of Python dependencies.
+- `trained_model.sav`: Placeholder for the trained machine learning model file.
+
+---
+
+## Contributing
+
 Contributions are welcome! If you want to contribute to this project, please fork the repository and create a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
