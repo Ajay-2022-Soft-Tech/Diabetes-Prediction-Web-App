@@ -17,7 +17,7 @@ This web application predicts the likelihood of diabetes based on input features
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/diabetes-prediction-app.git
+    git clone https://github.com/Ajay-2022-Soft-Tech/diabetes-prediction-app.git
     cd diabetes-prediction-app
     ```
 
@@ -69,8 +69,8 @@ This web application predicts the likelihood of diabetes based on input features
 
 ## File Structure
 
-- `app.py`: Main application file containing Streamlit interface code.
-- `model.py`: Code for loading the trained machine learning model.
+- `Diabeties_Prediction_Web_App`: Main application file containing Streamlit interface code.
+- `Deploying_Machine_Learning_model_using_Streamlit.py`: Code for loading the trained machine learning model.
 - `requirements.txt`: List of Python dependencies.
 - `trained_model.sav`: Placeholder for the trained machine learning model file.
 
@@ -81,8 +81,3 @@ This web application predicts the likelihood of diabetes based on input features
 Contributions are welcome! If you want to contribute to this project, please fork the repository and create a pull request.
 
 ---
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
