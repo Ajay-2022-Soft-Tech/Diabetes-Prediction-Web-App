@@ -15,7 +15,7 @@ st.write("Current working directory:", os.getcwd())
 st.write("Files in current directory:", os.listdir())
 
 # Use relative path to load the model
-model_path = 'Diabetes-Prediction-Web-App/trained_model.sav'
+model_path = 'trained_model.sav'
 
 try:
     with open(model_path, 'rb') as model_file:
