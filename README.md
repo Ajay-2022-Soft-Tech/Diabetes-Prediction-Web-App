@@ -4,9 +4,9 @@ This web application predicts the likelihood of diabetes based on input features
 
 ---
 
-<img src="https://github.com/Ajay-2022-Soft-Tech/Diabetes-Prediction-Web-App/assets/113298640/806a1a36-09d7-43b1-90ad-8d3a8e8d1654"  width="1000" height="500" />
+<img src="https://github.com/Ajay-2022-Soft-Tech/Diabetes-Prediction-Web-App/assets/113298640/806a1a36-09d7-43b1-90ad-8d3a8e8d1654"  width="1000" height="400" />
 
-<img src="https://github.com/Ajay-2022-Soft-Tech/Diabetes-Prediction-Web-App/assets/113298640/7706cbf9-c393-4bf2-9da6-856bc974ee6b"  width="1000" height="500" />
+<img src="https://github.com/Ajay-2022-Soft-Tech/Diabetes-Prediction-Web-App/assets/113298640/7706cbf9-c393-4bf2-9da6-856bc974ee6b"  width="1000" height="400" />
 
 
 
